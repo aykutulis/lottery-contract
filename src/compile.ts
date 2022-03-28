@@ -23,3 +23,6 @@ const input = {
 };
 
 export const { abi, evm } = JSON.parse(solc.compile(JSON.stringify(input))).contracts['Lottery.sol'].Lottery;
+
+const abiOutDir = path.join(rootDir, 'lottery.json');
+fs.writeFileSync(abiOutDir, JSON.stringify(abi));
